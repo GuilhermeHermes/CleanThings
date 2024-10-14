@@ -1,14 +1,14 @@
-package com.guilhermehermes.cleanthings.application.usecases;
+package com.guilhermehermes.cleanthings.application.usecases.place_order;
 
+import com.guilhermehermes.cleanthings.domain.entities.Item;
 import com.guilhermehermes.cleanthings.domain.valueobjects.Cpf;
-import com.guilhermehermes.cleanthings.domain.valueobjects.OrderItem;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class PlaceOrderInputBuilder {
     private Cpf userCpf;
-    private List<OrderItem> items = new ArrayList<>();
+    private List<Item> items = new ArrayList<>();
     private String cupom;
 
 
@@ -19,7 +19,7 @@ public class PlaceOrderInputBuilder {
         return this;
     }
 
-    public PlaceOrderInputBuilder withItems(List<OrderItem> items) {
+    public PlaceOrderInputBuilder withItems(List<Item> items) {
         this.items = items != null ? items : new ArrayList<>();
         return this;
     }
@@ -42,7 +42,7 @@ public class PlaceOrderInputBuilder {
         return userCpf;
     }
 
-    List<OrderItem> getItems() {
+    List<Item> getItems() {
         return items;
     }
 

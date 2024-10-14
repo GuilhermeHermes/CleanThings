@@ -1,4 +1,4 @@
-package com.guilhermehermes.cleanthings.application.usecases;
+package com.guilhermehermes.cleanthings.application.usecases.place_order;
 
 import com.guilhermehermes.cleanthings.repositories.*;
 import org.junit.jupiter.api.Test;
@@ -9,7 +9,7 @@ class PlaceOrderTest {
 
     OrderRepository orderRepository;
 
-    InMemoryUserRepository userRepository;
+    UserRepositoryInMemory userRepository;
 
     ItemRepositoryInMemory itemRepository;
 
@@ -18,6 +18,7 @@ class PlaceOrderTest {
 
     @Test
     void shouldCreatePlaceOrder() {
+
         PlaceOrder placeOrder = new PlaceOrder(orderRepository, itemRepository, userRepository, couponRepository);
         assertNotNull(placeOrder);
 

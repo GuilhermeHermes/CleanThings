@@ -1,6 +1,7 @@
 package com.guilhermehermes.cleanthings.repositories;
 
 import com.guilhermehermes.cleanthings.domain.entities.User;
+import com.guilhermehermes.cleanthings.domain.valueobjects.Cpf;
 import org.bson.types.ObjectId;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
@@ -12,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
 
-public class InMemoryUserRepository implements UserRepository{
+public class UserRepositoryInMemory implements UserRepository{
 
     @Override
     public <S extends User> S insert(S entity) {
@@ -130,7 +131,7 @@ public class InMemoryUserRepository implements UserRepository{
     }
 
     @Override
-    public User findByCpf(String cpf) {
+    public User findByCpf(Cpf cpf) {
         return null;
     }
 }

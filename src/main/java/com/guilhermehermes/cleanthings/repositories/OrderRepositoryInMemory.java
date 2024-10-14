@@ -14,7 +14,7 @@ import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Function;
 
-public class InMemoryOrderRepository implements OrderRepository {
+public class OrderRepositoryInMemory implements OrderRepository {
     private final Map<ObjectId, Order> database = new ConcurrentHashMap<>();
 
 

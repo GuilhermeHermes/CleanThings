@@ -46,9 +46,7 @@ public class Order extends BaseEntity{
 
     }
 
-    public void addItems(List<OrderItem> items){
-        this.items.addAll(items);
-    }
+
 
     public void addCoupon(Coupon coupon){
         this.coupon = coupon;
