@@ -1,4 +1,4 @@
-package com.guilhermehermes.cleanthings.repositories;
+package com.guilhermehermes.cleanthings.infra.repository;
 
 import com.guilhermehermes.cleanthings.domain.entities.Item;
 import org.bson.types.ObjectId;

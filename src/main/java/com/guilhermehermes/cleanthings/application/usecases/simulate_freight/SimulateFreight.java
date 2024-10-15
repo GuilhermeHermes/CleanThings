@@ -2,7 +2,7 @@ package com.guilhermehermes.cleanthings.application.usecases.simulate_freight;
 
 import com.guilhermehermes.cleanthings.domain.entities.Item;
 import com.guilhermehermes.cleanthings.domain.valueobjects.FreightCalculator;
-import com.guilhermehermes.cleanthings.repositories.ItemRepository;
+import com.guilhermehermes.cleanthings.infra.repository.ItemRepository;
 
 
 public class SimulateFreight {

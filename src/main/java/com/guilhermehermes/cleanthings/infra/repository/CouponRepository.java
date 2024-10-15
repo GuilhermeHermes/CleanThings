@@ -1,4 +1,4 @@
-package com.guilhermehermes.cleanthings.repositories;
+package com.guilhermehermes.cleanthings.infra.repository;
 
 import com.guilhermehermes.cleanthings.domain.entities.Coupon;
 import org.springframework.data.mongodb.repository.MongoRepository;

@@ -3,26 +3,32 @@ package com.guilhermehermes.cleanthings.application.usecases.place_order;
 import com.guilhermehermes.cleanthings.domain.entities.Coupon;
 import com.guilhermehermes.cleanthings.domain.valueobjects.DefaultFreightCalculator;
 import com.guilhermehermes.cleanthings.domain.entities.Order;
-import com.guilhermehermes.cleanthings.repositories.CouponRepository;
-import com.guilhermehermes.cleanthings.repositories.ItemRepository;
-import com.guilhermehermes.cleanthings.repositories.OrderRepository;
-import com.guilhermehermes.cleanthings.repositories.UserRepository;
+import com.guilhermehermes.cleanthings.infra.factory.RepositoryFactory;
+import com.guilhermehermes.cleanthings.infra.repository.CouponRepository;
+import com.guilhermehermes.cleanthings.infra.repository.ItemRepository;
+import com.guilhermehermes.cleanthings.infra.repository.OrderRepository;
+import com.guilhermehermes.cleanthings.infra.repository.UserRepository;
 
 public class PlaceOrder {
 
-    ItemRepository itemRepository;
-    UserRepository userRepository;
-    CouponRepository couponRepository;
-    OrderRepository orderRepository;
+    private final UserRepository userRepository;
+    private final OrderRepository orderRepository;
+    private final ItemRepository itemRepository;
+    private final CouponRepository couponRepository;
 
-    public PlaceOrder(OrderRepository orderRepository, ItemRepository itemRepository, UserRepository userRepository, CouponRepository couponRepository) {
-        this.orderRepository = orderRepository;
-        this.itemRepository = itemRepository;
-        this.userRepository = userRepository;
-        this.couponRepository = couponRepository;
+
+    public PlaceOrder(RepositoryFactory repositoryFactory) {
+      this.userRepository = repositoryFactory.getUserRepository();
+        this.orderRepository = repositoryFactory.getOrderRepository();
+        this.itemRepository = repositoryFactory.getItemRepository();
+        this.couponRepository = repositoryFactory.getCouponRepository();
+
     }
 
     public PlaceOrderOutput execute(PlaceOrderInput input) {
+
+
+
         Long sequence = orderRepository.count() + 1;
 
         if (userRepository.findByCpf(input.getUserCpf()) == null) {

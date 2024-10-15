@@ -32,8 +32,8 @@ public class Order extends BaseEntity{
         this.code = OrderCode.createForCurrentYear(sequentialNumber);
     }
 
-    public double getTotal(){
-        return items.stream().mapToDouble(item -> item.getPriceItem() * item.getQuantity()).sum() + freight;
+    public Double getTotal() {
+        return items.stream().mapToDouble(item -> item.getPriceItem() * item.getQuantity()).sum();
     }
 
     public double getTotalWithDiscount(){

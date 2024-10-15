@@ -1,16 +1,12 @@
-package com.guilhermehermes.cleanthings.repositories;
+package com.guilhermehermes.cleanthings.infra.repository;
 
 import com.guilhermehermes.cleanthings.domain.entities.Coupon;
-import org.bson.types.ObjectId;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.query.FluentQuery;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
